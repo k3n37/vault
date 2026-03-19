@@ -1,36 +1,34 @@
 # vault
 
-Database and persistence-engineering patterns for schemas, indexing, migrations, caching, and storage tradeoffs.
-
 ## Purpose
+Define durable storage, schema shape, migration discipline, and persistence boundaries for the ecosystem.
 
-`vault` exists to give the ecosystem a dedicated home for durable storage design and persistence discipline.
+## Why it matters
+When persistence is unclear, data models drift, migrations become risky, and application behavior loses consistency over time.
 
-## Role in the ecosystem
+## Scope
+This repo focuses on schema design, storage tradeoffs, and persistence evolution. It does not try to be a complete database operations repo.
 
-- Storage companion to `flux`
-- Supports product modeling in `summit`
-- Feeds persistence decisions into `orbit`
+## System Role
+`vault` is the database and persistence layer for the ecosystem. It gives services and data pipelines a durable model to build on.
 
-## Status
+## System Connections
+- Depends on: product and service boundaries from `summit` and `forge`.
+- Feeds into: `forge`, `flux`, `summit`.
+- Interacts with: `forge`, `flux`, `orbit`.
 
-Docs-first starter with schema notes and a minimal SQL example.
+## Core Concepts
+- schema design
+- migration flow
+- indexing choices
+- storage boundaries
+- data durability
 
-## Tech stack
+## Minimal Artifact
+`src/schema.sql` and `docs/storage-patterns.md` provide the starter schema and persistence note.
 
-- SQL
-- Markdown
+## Notes
+The emphasis is on explicit storage decisions and change discipline rather than abstract database advice.
 
-## Structure
-
-```text
-vault/
-├── docs/
-│   └── storage-patterns.md
-├── src/
-│   └── schema.sql
-├── .editorconfig
-├── .gitignore
-├── README.md
-└── ROADMAP.md
-```
+## Next Steps
+Add migration examples, caching tradeoff notes, and service-level persistence patterns.
